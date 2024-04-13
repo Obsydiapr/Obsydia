@@ -29,18 +29,22 @@
             text-align: center;
             margin-top: 50px;
         }
-        /* Positioning for pop-up widget */
-        .calendly-badge-widget {
+        /* Positioning for pop-up button */
+        .calendly-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
+            background-color: #0069ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        /* Dark theme for Calendly inline widget */
-        .calendly-inline-widget {
-            background-color: #2a2a2a; /* Dark gray background color */
-            color: #ffffff; /* White text color */
-            height: 600px; /* Adjusted height to fit within initial view */
-            max-width: 100%; /* Ensure widget width adjusts responsively */
+        /* Style for pop-up button text */
+        .calendly-button-text {
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -60,18 +64,16 @@
         </div>
     </div>
 
-    <!-- Calendly badge widget popup -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly badge widget popup button -->
+    <button class="calendly-button" onclick="openCalendly()">Schedule time with us</button>
+
     <script type="text/javascript">
-        window.onload = function() { 
-            Calendly.initBadgeWidget({ 
-                url: 'https://calendly.com/obsydiapr/obsydia', 
-                text: 'Schedule time with us', 
-                color: '#0069ff', 
-                textColor: '#ffffff', 
-                branding: true 
-            }); 
+        function openCalendly() {
+            Calendly.showPopupWidget('https://calendly.com/obsydiapr/obsydia');
         }
     </script>
+
+    <!-- Calendly badge widget -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
