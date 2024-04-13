@@ -1,92 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Obsydia</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-body {font-size: 16px;}
-img {margin-bottom: -8px;}
-.mySlides {display: none;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsydia Scheduling Service</title>
+    <!-- Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0069ff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .calendly-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
-<body class="w3-content w3-black" style="max-width:1500px;">
-
-<!-- Header with Slideshow -->
-<header class="w3-display-container w3-center">
-  <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
-  <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="obsydia.jpeg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
-    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
-      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-        <h1 class="w3-xlarge">Take photos with our app</h1>
-        <hr class="w3-opacity">
-        <p>Super simple installment: free of charge</p>
-        <p><button class="w3-button w3-block w3-green w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
-      </div>
+<body>
+    <header>
+        <img src="obsydia.jpeg" alt="Obsydia Logo" height="100">
+        <h1>Welcome to Obsydia Scheduling Service</h1>
+    </header>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We provide a convenient scheduling solution to help you manage your appointments seamlessly.</p>
+        
+        <!-- Calendly inline widget -->
+        <div class="calendly-container">
+            <h2>Schedule an Appointment</h2>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/obsydiapr/obsydia" style="min-width:320px;height:700px;"></div>
+        </div>
     </div>
-  </div>
-  <div class="mySlides w3-animate-opacity">
-    <!-- Slide 2 content remains unchanged -->
-  </div>
-  <div class="mySlides w3-animate-opacity">
-    <!-- Slide 3 content remains unchanged -->
-  </div>
-  <!-- Calendly button embedded -->
-  <div id="calendly-container" class="w3-hide-small"></div>
-  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-  <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
-</header>
 
-<!-- The App Section -->
-<div class="w3-padding-64 w3-white">
-  <!-- App section content remains unchanged -->
-</div>
-
-<!-- Modal -->
-<div id="download" class="w3-modal w3-animate-opacity">
-  <!-- Modal content remains unchanged -->
-</div>
-
-<!-- Clarity Section -->
-<div class="w3-padding-64 w3-light-grey">
-  <!-- Clarity section content remains unchanged -->
-</div>
-
-<!-- Features Section -->
-<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
-  <!-- Features section content remains unchanged -->
-</div>
-
-<!-- Pricing Section -->
-<div class="w3-padding-64 w3-center w3-white">
-  <!-- Pricing section content remains unchanged -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-  <!-- Footer content remains unchanged -->
-</footer>
-
-<script>
-// Slideshow function remains unchanged
-
-// Function to load Calendly widget
-function loadCalendly() {
-  var calendlyContainer = document.getElementById('calendly-container');
-  // Embed Calendly widget
-  calendlyContainer.innerHTML = '<div class="calendly-inline-widget" data-url="https://calendly.com/your-username" style="min-width:320px;height:580px;"></div>';
-}
-
-// Load Calendly widget when the page is fully loaded
-window.addEventListener('load', function() {
-  loadCalendly();
-});
-</script>
-
+    <!-- Calendly badge widget popup -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            Calendly.initBadgeWidget({ 
+                url: 'https://calendly.com/obsydiapr/obsydia', 
+                text: 'Schedule time with us', 
+                color: '#0069ff', 
+                textColor: '#ffffff', 
+                branding: true 
+            }); 
+        }
+    </script>
 </body>
 </html>
